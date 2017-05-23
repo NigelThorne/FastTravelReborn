@@ -17,7 +17,7 @@ deploy:
   provider: releases
   api_key:
     secure: VarMdomQELf3vzI8GaVoAtR5Hf2sU/RurkoeTi3chp/AQUDG5E64Yk0OZxOcuwxEdM1UbVBGp2mNveQAsOdRkr/Ra6pwmb0RSWPl7lOUN3IUZoFv+9OKi6tkWb4Ae70knnSMAdJoS8eaNYBUKXTDxmY/sc8bHsRMl3UBjxFx7vYnayh5nUfFXR6k84UbtX2nkgr7Co+Lisv5R/H+0Y+WgrEe8hjdlNr6CVy6O42KKpz9w3V2aqYiickSGXIsPea1uNtMTpf4Q4HijUNNEv8xLTx7tEp1quagFuw9FKdtWpj7P2yOv0D5NPaQoxKsNgeHUMNyXfMBB06kWwLNvDqrXIW4kRXxznJBV48qP73CcA++9RKrPvQCZr8gfgkBaINQaTODOvsm+6yOQv0EwMyVI6bye/PEejuhVkX/IQ4yjdSnGLkxQUPE/Pare3srNAESyJfdC+WlrF8men6FQhOaXqBYfWDDvHuGAFyQRqKQ6CrRsobCOs8qum3fXK2xImqGGS53tAvrDt7biDEkQGjC+yJNAYQspB7o7vo6IE6qNEnG9FTmtp/+vxcHHCzA/uFHkCay/o80BIyY3wgib9ZgE8cZCrdAmBADFX7trVE4JhKRRM3xTbuEs4Woxp0ClRtGswfeZTNnl3e5lMNjkj3C43jW1AOXC9NxFBIxIBEGsgU=
-  file: FastTravelReborn-@version@.jar
+  file: FastTravelReborn.jar
   skip_cleanup: true
   on:
     repo: NigelThorne/FastTravelReborn
