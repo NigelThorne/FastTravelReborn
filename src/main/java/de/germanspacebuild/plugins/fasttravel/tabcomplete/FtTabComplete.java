@@ -29,6 +29,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -41,22 +43,33 @@ public class FtTabComplete implements TabCompleter {
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
-        if (args.length != 1) {
-            return null;
-        }
 
         if (!(sender instanceof Player)) {
             return null;
         }
 
         Player player = ((Player) sender);
+        List<FastTravelSign> signs = new ArrayList<>();
 
         if (player.hasPermission(FastTravel.PERMS_BASE + "overrides.allpoints")) {
-            return FastTravelUtil.sendSignNames(FastTravelDB.getAllSigns());
+            signs = FastTravelDB.getAllSigns();
+        } else {
+            signs = FastTravelDB.getSignsFor(player.getUniqueId());
         }
 
-        List<FastTravelSign> signs = FastTravelDB.getSignsFor(player.getUniqueId());
+        List<String> singNames = FastTravelUtil.sendSignNames(signs);
 
-        return FastTravelUtil.sendSignNames(signs);
+        for (String arg : args) {
+            System.out.println(arg);
+        }
+
+        for (Iterator<String> iterator = singNames.iterator(); iterator.hasNext(); ) {
+            String name = iterator.next();
+            if (!name.toLowerCase().startsWith(args[0].toLowerCase())) {
+                iterator.remove();
+            }
+        }
+
+        return singNames;
     }
 }

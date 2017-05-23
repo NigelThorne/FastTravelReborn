@@ -5,7 +5,7 @@ apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'com.selesse.git.changelog'
 
 group = 'de.germanspacebuild.plugins'
-version = '1.0.6'
+version = '1.0.7'
 
 description = "FastTravelSigns"
 
